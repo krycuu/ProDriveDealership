@@ -11,13 +11,17 @@ Aplikacja do sprzedaży samochodów
 
 ## Uruchamianie projektu lokalnie
 
-1. Najpierw sklonuj ten projekt na swój komputer. Możesz to zrobić za pomocą polecenia git clone w terminalu:
+1. Pobranie Projektu
+
+Najpierw sklonuj ten projekt na swój komputer. Możesz to zrobić za pomocą polecenia git clone w terminalu:
 
 
 ```bash
   git clone https://github.com/krycuu/ProDriveDealership.git
 ```
-2. Po pobraniu projektu przejdź do jego katalogu w terminalu za pomocą komendy cd:
+2. Otwarcie Projektu
+
+Po pobraniu projektu przejdź do jego katalogu w terminalu za pomocą komendy cd:
 
 ```bash
   cd ProDriveDealership
