@@ -11,15 +11,13 @@ Aplikacja do sprzedaży samochodów
 
 ## Uruchamianie projektu lokalnie
 
-1. Pobranie Projektu
-Najpierw sklonuj ten projekt na swój komputer. Możesz to zrobić za pomocą polecenia git clone w terminalu:
+1. Najpierw sklonuj ten projekt na swój komputer. Możesz to zrobić za pomocą polecenia git clone w terminalu:
 
 
 ```bash
   git clone https://github.com/krycuu/ProDriveDealership.git
 ```
-2. Otwarcie Projektu
-Po pobraniu projektu przejdź do jego katalogu w terminalu za pomocą komendy cd:
+2. Po pobraniu projektu przejdź do jego katalogu w terminalu za pomocą komendy cd:
 
 ```bash
   cd ProDriveDealership
@@ -40,7 +38,7 @@ Aplikacja umożliwia zakup jednego spośród sześciu dostępnych samochodów.
 - Formularz zakupowy wymaga od użytkownika podania kilku danych, takich jak rodzaj finansowania, imię, datę dostawy oraz opcjonalnie akcesoria.
 - Pod formularzem znajduje się przycisk "Powrót do wyboru", który usuwa wypełnione dane i przenosi do sekcji powyżej - 'Nasza Oferta'.
 ### Podsumowanie zakupu
-- Wybrane auto z sekcji "Nasza oferta" przenosi się na środek sekcji "Formularz zakupowy".
+- Wybrane auto z sekcji "Nasza oferta" przenosi się do sekcji "Formularz zakupowy".
 - Po prawej stronie sekcji znajduje się podsumowanie, które pokazuje cenę auta, akcesoriów oraz cenę całkowitą.
 - Przycisk "Zakup" finalizuje zakup, przenosząc na górę strony pop-up z podsumowaniem transakcji.
 
@@ -50,7 +48,7 @@ Aplikacja umożliwia zakup jednego spośród sześciu dostępnych samochodów.
 3. Formularz posiada walidację, która blokuje finalizację transakcji w przypadku nieuzupełnienia wszystkich pól. Dodatkowy warunek dotyczy pola "Imię i nazwisko", które musi być odzielone spacją.
 4. Najbliższa data dostawy, jaką można ustawić, to 14 dni od dnia, w którym dokonuje się transakcji.
 5. Nie można ponownie dodać tych samych akcesoriów.
-6. Aplikacja jest w pełni funkcjonalna również na niskich rozdzielczosciach ekranów 
+
 
 ## Kompatybilność z różnymi rozdzielczościami ekranu
 - Aplikacja została zaprojektowana i przetestowana pod kątem kompatybilności z różnymi rozdzielczościami ekranu, w tym również na urządzeniach o nietypowych proporcjach ekranu, takich jak Galaxy Z Fold.
