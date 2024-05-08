@@ -1,6 +1,6 @@
 // WYSZKUKIWARKA PO NAZWIĘ
 
-const search = document.querySelector('.search-input');
+const search = document.querySelector('#search-input');
 const cars_name = document.querySelectorAll('.auto-card');
 
 const searchEngine = (e) => {
@@ -23,15 +23,32 @@ search.addEventListener('keyup', searchEngine);
 
 const cars_btns = document.querySelectorAll('.auto-card-info-btn');
 const sale_form = document.querySelector('.sale-form');
+let isOpen = false;
 
-const scrollDown = () => {
-	sale_form.scrollIntoView({ behavior: 'smooth' });
+const displayAndScroll = () => {
+    if (!isOpen) {
+        sale_form.style.display = 'block';
+        isOpen = true;
+    } else {
+        sale_form.style.display = 'none';
+        isOpen = false;
+    }
+    sale_form.scrollIntoView({ behavior: 'smooth' });
+};
+
+const displayAndScroll2 = () => {
+    if (this === sale_form.previousElementSibling) {
+        displayAndScroll();
+    } else { 
+        sale_form.style.display = 'block';
+        sale_form.scrollIntoView({ behavior: 'smooth' });
+        isOpen = true;
+    }
 };
 
 cars_btns.forEach((el) => {
-	el.addEventListener('click', scrollDown);
+    el.addEventListener('click', displayAndScroll2);
 });
-
 
 
 // KLONOWANIE WYBRANEJ KARTY DO FORMULARZA
@@ -75,8 +92,8 @@ function cloneCardEngine(e) {
 	carPriceValue.textContent = carPrice;
 	carPriceValueSummary.textContent = carPrice;
 
-	localStorage.setItem('chosenCar', clonedAutoCard.outerHTML);
-	localStorage.setItem('clonedAutoCard', clonedCardSummary.outerHTML);
+	localStorage.setItem('chosenCar', clonedAutoCard);
+	localStorage.setItem('clonedAutoCard', clonedCardSummary);
 	localStorage.setItem('totalPrice', carPrice);
 	localStorage.setItem(
 		'carPriceValueSummary',
@@ -108,7 +125,7 @@ function loadChosenCarFromLocalStorage() {
 	const serializedCard = localStorage.getItem('chosenCar');
 	if (serializedCard) {
 		chosenCarDiv.innerHTML = serializedCard;
-		const carPrice = chosenCarDiv.querySelector('.car-price').textContent;
+		const carPrice = chosenCarDiv.querySelector('.car-price');
 		const totalPriceCell = document.querySelector('.value-car-price');
 		totalPriceCell.textContent = carPrice;
 	}
@@ -359,6 +376,8 @@ const transactionFinalization = () => {
 		if (summaryPopUp) {
 			summaryPopUp.style.top = '30px';
 		}
+		const sale_form = document.querySelector('.sale-form');
+        sale_form.style.display = 'none';
 	}
 
 	const heroTitle = document.querySelector('.hero-title');
